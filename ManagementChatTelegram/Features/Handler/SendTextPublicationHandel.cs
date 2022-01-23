@@ -24,7 +24,7 @@ namespace ManagementChatTelegram.Features.Handler
         {
             try
             {
-                Message message = _telegram.Bot.SendTextMessageAsync(_telegram.Chat, request.Text).GetAwaiter().GetResult();
+                Message message = _telegram.Bot.SendTextMessageAsync(_telegram.Chat, request.Message).GetAwaiter().GetResult();
                 return Task.FromResult((IEvent)new Succes("Message send"));
             }
             catch (Exception ex)
